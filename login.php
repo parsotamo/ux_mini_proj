@@ -1,4 +1,5 @@
 <?php
+// importing configurations and partials
 require 'config/config.php';
 require 'config/login.config.php';
 include('partials/header.php');
@@ -18,7 +19,9 @@ include('partials/header.php');
                             <div class="input-group has-validation">
                                 <span class="input-group-text" id="inputGroupPrepend">@</span>
                                 <input type="email" class="form-control 
-                                <?php if (isset($_POST['submit']) && count($error_array) == 0) {
+                                <?php
+                                // checking if form was submitted and if there are erros in the error array
+                                if (isset($_POST['submit']) && count($error_array) == 0) {
                                     echo 'is-valid';
                                 } elseif (isset($_POST['submit']) && count($error_array) > 0) {
                                     echo 'is-invalid';
@@ -43,7 +46,9 @@ include('partials/header.php');
                             <div class="input-group has-validation">
                                 <span class="input-group-text" id="inputGroupPrepend">&#128273;</span>
                                 <input type="password" class="form-control 
-                                <?php if (isset($_POST['submit']) && count($error_array) == 0) {
+                                <?php
+                                // checking if form was submitted and if there are erros in the error array
+                                if (isset($_POST['submit']) && count($error_array) == 0) {
                                     echo 'is-valid';
                                 } elseif (isset($_POST['submit']) && count($error_array) > 0) {
                                     echo 'is-invalid';

@@ -3,6 +3,7 @@ require 'config/config.php';
 include('partials/header.php');
 if (isset($_POST['logout'])) {
     unset($_SESSION['user']);
+    // Redirecting to index page
     Header('Location: index.php');
 }
 ?>

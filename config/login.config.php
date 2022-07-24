@@ -17,6 +17,7 @@ if (isset($_POST['submit'])) {
     $password = md5($_POST['login_password']);  // Remove html tags 
     // Check if emails are the same
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    // Fetching record from users table
     $query = mysqli_query($conn, "SELECT * from users WHERE email ='$email' AND password='$password';");
     $num_rows = mysqli_num_rows($query);
     if ($num_rows == 1) {

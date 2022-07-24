@@ -38,6 +38,7 @@ if (isset($_POST['submit'])) {
         $error_array['name']['ivlen'] = 'Invalid length. Length is between 3 to 50 characters';
     }
 
+    // Validating email
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $email = filter_var($email, FILTER_VALIDATE_EMAIL);
     } else {
@@ -45,10 +46,12 @@ if (isset($_POST['submit'])) {
     }
     $timestamp = date('Y-m-d H:i:s');
     if (empty($error_array['name']) && empty($error_array['email']) && empty($error_array['message'])) {
+        // Inserting record to contact table
         $send_message  = mysqli_query($conn, "INSERT INTO contact(name, email, message, created_at) VALUES ('$name', '$email', '$message', '$timestamp')");
         $_SESSION['ctc_name'] = '';
         $_SESSION['ctc_email'] = '';
         $_SESSION['ctc_message'] = '';
+        // Redirecting to index page
         Header('Location: index.php');
     }
 }

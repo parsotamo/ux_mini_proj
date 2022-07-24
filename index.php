@@ -3,6 +3,7 @@ require 'config/config.php';
 include('partials/header.php');
 require 'config/index.config.php';
 if (!isset($_SESSION['user'])) {
+    // Redirecting to login page
     Header('Location: login.php');
 }
 ?>

@@ -20,7 +20,9 @@ if (isset($_SESSION['user'])) {
                         <div class="col-md-6">
                             <label for="fname" class="form-label">First name</label>
                             <input type="text" class="form-control 
-                            <?php if (isset($_POST['submit']) && count($error_array['fname']) == 0) {
+                            <?php
+                            // checking if form was submitted and if there are erros in the error array
+                            if (isset($_POST['submit']) && count($error_array['fname']) == 0) {
                                 echo 'is-valid';
                             } elseif (isset($_POST['submit']) && count($error_array['fname']) > 0) {
                                 echo 'is-invalid';
@@ -41,7 +43,9 @@ if (isset($_SESSION['user'])) {
                         <div class="col-md-6">
                             <label for="lname" class="form-label">Last name</label>
                             <input type="text" class="form-control 
-                            <?php if (isset($_POST['submit']) && count($error_array['lname']) == 0) {
+                            <?php
+                            // checking if form was submitted and if there are erros in the error array
+                            if (isset($_POST['submit']) && count($error_array['lname']) == 0) {
                                 echo 'is-valid';
                             } elseif (isset($_POST['submit']) && count($error_array['lname']) > 0) {
                                 echo 'is-invalid';
@@ -64,7 +68,9 @@ if (isset($_SESSION['user'])) {
                             <div class="input-group has-validation">
                                 <span class="input-group-text" id="inputGroupPrepend">@</span>
                                 <input type="email" class="form-control 
-                                <?php if (isset($_POST['submit']) && count($error_array['email']) == 0) {
+                                <?php
+                                // checking if form was submitted and if there are erros in the error array  
+                                if (isset($_POST['submit']) && count($error_array['email']) == 0) {
                                     echo 'is-valid';
                                 } elseif (isset($_POST['submit']) && count($error_array['email']) > 0) {
                                     echo 'is-invalid';

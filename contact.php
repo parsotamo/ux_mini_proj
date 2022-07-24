@@ -1,8 +1,10 @@
 <?php
+// importing configurations and partials
 require 'config/config.php';
 require 'config/contact.config.php';
 include('partials/header.php');
 if (!isset($_SESSION['user'])) {
+    // Redirecting to login page
     Header('Location: login.php');
 }
 
@@ -17,7 +19,9 @@ if (!isset($_SESSION['user'])) {
                         <div class="col-12">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" class="form-control 
-                            <?php if (isset($_POST['submit']) && count($error_array['name']) == 0) {
+                            <?php
+                            // checking if form was submitted and if there are erros in the error array
+                            if (isset($_POST['submit']) && count($error_array['name']) == 0) {
                                 echo 'is-valid';
                             } elseif (isset($_POST['submit']) && count($error_array['name']) > 0) {
                                 echo 'is-invalid';
@@ -41,7 +45,9 @@ if (!isset($_SESSION['user'])) {
                             <div class="input-group has-validation">
                                 <span class="input-group-text" id="inputGroupPrepend">@</span>
                                 <input type="email" class="form-control 
-                                <?php if (isset($_POST['submit']) && count($error_array['email']) == 0) {
+                                <?php
+                                // checking if form was submitted and if there are erros in the error array
+                                if (isset($_POST['submit']) && count($error_array['email']) == 0) {
                                     echo 'is-valid';
                                 } elseif (isset($_POST['submit']) && count($error_array['email']) > 0) {
                                     echo 'is-invalid';
@@ -65,7 +71,9 @@ if (!isset($_SESSION['user'])) {
                             <label for="message" class="form-label">Message</label>
                             <div class="input-group has-validation">
                                 <span class="input-group-text" id="inputGroupPrepend">&#9998;</span>
-                                <textarea class="form-control <?php if (isset($_POST['submit']) && count($error_array['message']) == 0) {
+                                <textarea class="form-control <?php
+                                                                // checking if form was submitted and if there are erros in the error array
+                                                                if (isset($_POST['submit']) && count($error_array['message']) == 0) {
                                                                     echo 'is-valid';
                                                                 } elseif (isset($_POST['submit']) && count($error_array['message']) > 0) {
                                                                     echo 'is-invalid';

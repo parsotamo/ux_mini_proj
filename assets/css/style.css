@@ -106,3 +106,7 @@
 .post-date{
     font-size: 11px;
 }
+
+.navbar{
+    z-index: 100;
+}

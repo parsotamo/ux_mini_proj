@@ -102,8 +102,8 @@ if (isset($_POST['submit'])) {
     }
     if (empty($error_array['fname']) && empty($error_array['lname']) && empty($error_array['email']) && empty($error_array['fname'])) {
         $password = md5($password1);
-        $photo = 'assets/images/user1.png';
-        $create_user  = mysqli_query($conn, "INSERT INTO users(first_name, last_name, email, password, created_at, photo, num_posts, num_likes, user_active, friends) VALUES ('$fname', '$lname', '$email1', '$password', '$date', '$photo', '0', '0', 'no', ',')");
+        // Inserting record to users table
+        $create_user  = mysqli_query($conn, "INSERT INTO users(first_name, last_name, email, password, created_at) VALUES ('$fname', '$lname', '$email1', '$password', '$date')");
 
         $_SESSION['reg_fname'] = '';
         $_SESSION['reg_lname'] = '';

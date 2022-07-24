@@ -1,4 +1,5 @@
 <?php
+// Checking current page
 $active_page = basename($_SERVER['PHP_SELF'], ".php");
 
 ?>
